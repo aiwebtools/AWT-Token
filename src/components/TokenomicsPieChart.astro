@@ -1,0 +1,99 @@
+---
+const segments = [
+  { percentage: 25, label: 'Development and Research', color: '#0056b3' },
+  { percentage: 15, label: 'Marketing and Partnerships', color: '#3384d7' },
+  { percentage: 20, label: 'Community and Ecosystem', color: '#66a3e0' },
+  { percentage: 30, label: 'Liquidity Pool (Locked)', color: '#99c2ea' },
+  { percentage: 10, label: 'Founders and Team', color: '#cce1f4' }
+];
+
+let cumulativePercentage = 0;
+const segments_data = segments.map(segment => {
+  const startAngle = (cumulativePercentage * 360) / 100;
+  cumulativePercentage += segment.percentage;
+  const endAngle = (cumulativePercentage * 360) / 100;
+  
+  const startRadians = (startAngle - 90) * Math.PI / 180;
+  const endRadians = (endAngle - 90) * Math.PI / 180;
+  
+  const x1 = 100 + 80 * Math.cos(startRadians);
+  const y1 = 100 + 80 * Math.sin(startRadians);
+  const x2 = 100 + 80 * Math.cos(endRadians);
+  const y2 = 100 + 80 * Math.sin(endRadians);
+  
+  const largeArc = segment.percentage > 50 ? 1 : 0;
+  
+  return {
+    ...segment,
+    d: `M 100 100 L ${x1} ${y1} A 80 80 0 ${largeArc} 1 ${x2} ${y2} Z`
+  };
+});
+---
+
+<div class="chart-container">
+  <svg viewBox="0 0 200 200" class="pie-chart">
+    {segments_data.map(segment => (
+      <path
+        d={segment.d}
+        fill={segment.color}
+        stroke="#fff"
+        stroke-width="1"
+      >
+        <title>{segment.label}: {segment.percentage}%</title>
+      </path>
+    ))}
+  </svg>
+  <div class="legend">
+    {segments.map(segment => (
+      <div class="legend-item">
+        <span class="color-box" style={`background-color: ${segment.color}`}></span>
+        <span class="label">{segment.label} ({segment.percentage}%)</span>
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .chart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+
+  .pie-chart {
+    width: 200px;
+    height: 200px;
+  }
+
+  .legend {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .color-box {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+  }
+
+  .label {
+    color: #333;
+  }
+
+  @media (max-width: 600px) {
+    .pie-chart {
+      width: 150px;
+      height: 150px;
+    }
+  }
+</style>

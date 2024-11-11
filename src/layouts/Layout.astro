@@ -1,0 +1,42 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="AWT Token White Paper - AiWebTools.Ai's innovative AI marketplace token" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		--accent: #0056b3;
+		--accent-light: #3384d7;
+		--accent-dark: #004080;
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		background: #f4f4f9;
+		scroll-behavior: smooth;
+	}
+	body {
+		margin: 0;
+		padding: 0;
+		line-height: 1.6;
+	}
+	* {
+		box-sizing: border-box;
+	}
+</style>

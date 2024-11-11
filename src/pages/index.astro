@@ -1,0 +1,273 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TokenomicsPieChart from '../components/TokenomicsPieChart.astro';
+---
+
+<Layout title="AWT Token White Paper">
+	<header class="header">
+		<nav class="nav-container">
+			<div class="nav-links">
+				<a href="#introduction">Introduction</a>
+				<a href="#token-utility">Token Utility</a>
+				<a href="#tokenomics">Tokenomics</a>
+				<a href="#roadmap">Roadmap</a>
+				<a href="#conclusion">Conclusion</a>
+			</div>
+			<div class="wallet-container">
+				<a href="/exchange" class="wallet-btn">Connect Wallet</a>
+			</div>
+		</nav>
+	</header>
+
+	<main>
+		<!-- Rest of the content remains exactly the same -->
+		<h1>AWT Token White Paper</h1>
+		<p class="intro">
+			This white paper outlines the value proposition, utility, and potential of the AWT Token by AiWebTools.Ai, launching on the Solana blockchain. AWT Token holders gain exclusive access to operational instructions for AI Agents, empowering them to create, customize, and launch their own AI Agent marketplaces with ease.
+		</p>
+
+		<section id="introduction" class="section">
+			<h2>Introduction</h2>
+			<p>
+				AiWebTools.Ai is an innovative platform that aims to democratize access to artificial intelligence by providing customizable AI Agents powered by proprietary operational instructions. The AWT Token serves as the key to this ecosystem, granting holders unique benefits and enabling a sustainable model of value creation. Built on the Solana blockchain, AWT leverages Solana's high-speed, low-cost infrastructure to ensure efficiency and scalability as the ecosystem grows.
+			</p>
+		</section>
+
+		<section id="token-utility" class="section">
+			<h2>Token Utility</h2>
+			<p>
+				By holding the AWT Token, users gain exclusive access to the operational instructions powering all AI Agents developed by AiWebTools.Ai. This allows token holders to effortlessly deploy these instructions and launch their own AI Agent marketplaces. For users needing customized operational instructions, AWT Tokens can be used to submit requests for tailored solutions, empowering holders to create unique, personalized AI applications.
+			</p>
+		</section>
+
+		<section id="tokenomics" class="section">
+			<h2>Tokenomics</h2>
+			<p>AWT Token distribution is structured to incentivize long-term engagement and growth:</p>
+			<TokenomicsPieChart />
+			<ul>
+				<li><strong>30%:</strong> Development and Research</li>
+				<li><strong>20%:</strong> Marketing and Partnerships</li>
+				<li><strong>25%:</strong> Community and Ecosystem Rewards</li>
+				<li><strong>15%:</strong> Reserve Fund</li>
+				<li><strong>10%:</strong> Founders and Team (subject to vesting)</li>
+			</ul>
+		</section>
+
+		<section id="roadmap" class="section">
+			<h2>Roadmap</h2>
+			<h3>2024 Roadmap</h3>
+			<div class="roadmap">
+				<ul>
+					<li><strong>Q1 2024:</strong> Launch of the AiWebTools.ai Platform</li>
+					<li><strong>Q2 2024:</strong> Expansion of the AI Agent Marketplace</li>
+					<li><strong>Q3 2024:</strong> Initial Token Launch and Platform Beta Release</li>
+					<li><strong>Q4 2024:</strong> Global Marketing Campaign, Community Reward Programs, and Exchange Listings</li>
+				</ul>
+			</div>
+
+			<h3>2025 Roadmap</h3>
+			<div class="roadmap">
+				<h4>Q1 2025: Tradability and Utility Expansion for Operational Instructions</h4>
+				<ul>
+					<li>Enable AWT Token holders to trade, exchange, or burn tokens to access exclusive operational instructions for custom AI agents within the AiWebTools.ai ecosystem.</li>
+					<li>Introduce a 1% burn mechanism for each transaction, enhancing scarcity and long-term value within the tokenomics model.</li>
+					<li>Provide token holders with the unique ability to deploy their AI agents on personalized marketplaces, supporting the growth of a decentralized AI marketplace network.</li>
+				</ul>
+
+				<h4>Q2 2025: Enhanced AI Customization Suite and Developer Tools</h4>
+				<ul>
+					<li>Launch an AI customization toolkit for token holders to fine-tune operational instructions, enabling more specific, tailored agent functionalities.</li>
+					<li>Introduce developer tools for streamlined deployment and integration of AI agents, allowing token holders and developers to create and modify agents in alignment with their unique requirements.</li>
+				</ul>
+
+				<h4>Q3 2025: Token Staking and Ecosystem Rewards</h4>
+				<ul>
+					<li>Launch staking options for AWT Tokens, allowing holders to earn rewards and contribute to the platform's growth and security.</li>
+					<li>Initiate an ecosystem rewards program incentivizing users who actively participate in developing, trading, and using operational instructions within the AiWebTools.ai ecosystem.</li>
+				</ul>
+
+				<h4>Q4 2025: Global Partnerships and AI Agent Marketplace Expansion</h4>
+				<ul>
+					<li>Expand partnerships with AI developers and platforms to increase the diversity of available operational instructions and customizable agents.</li>
+					<li>Focus on a global marketing push to attract new users and developers to the platform, enhancing the value and reach of the AI Agent Marketplace.</li>
+				</ul>
+			</div>
+		</section>
+
+		<section id="conclusion" class="section">
+			<h2>Conclusion</h2>
+			<p>
+				The AWT Token by AiWebTools.Ai represents a dynamic, sustainable opportunity in the AI landscape. By granting access to customizable and innovative AI solutions, AWT empowers individuals and businesses to participate in an ecosystem designed for growth and adaptability.
+			</p>
+		</section>
+
+		<footer>
+			<p>For more information, visit <a href="http://www.AiWebTools.Ai">www.AiWebTools.Ai</a></p>
+			<p>#AWT #aiwebtools</p>
+		</footer>
+	</main>
+</Layout>
+
+<style>
+	.header {
+		position: sticky;
+		top: 0;
+		z-index: 100;
+		background: var(--accent);
+		width: 100%;
+	}
+
+	.nav-container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1rem 2rem;
+		max-width: 1200px;
+		margin: 0 auto;
+		gap: 1rem;
+	}
+
+	.nav-links {
+		display: flex;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+
+	.nav-links a {
+		color: white;
+		padding: 0.5rem 1rem;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-size: 0.9em;
+		transition: background-color 0.2s;
+		border-radius: 4px;
+	}
+
+	.nav-links a:hover {
+		background: var(--accent-dark);
+	}
+
+	.wallet-container {
+		flex-shrink: 0;
+	}
+
+	.wallet-btn {
+		display: inline-block;
+		background: white;
+		color: var(--accent);
+		padding: 0.5rem 1.5rem;
+		border-radius: 2rem;
+		text-decoration: none;
+		font-weight: 600;
+		transition: all 0.2s;
+		border: 2px solid white;
+	}
+
+	.wallet-btn:hover {
+		background: var(--accent);
+		color: white;
+	}
+
+	main {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 2rem;
+		color: #333;
+	}
+
+	h1 {
+		font-size: 2.5rem;
+		color: var(--accent);
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+
+	h2 {
+		color: var(--accent);
+		margin-top: 2rem;
+	}
+
+	h3 {
+		color: var(--accent);
+		margin-top: 2rem;
+		font-size: 1.5rem;
+	}
+
+	h4 {
+		color: var(--accent);
+		margin-top: 1.5rem;
+		font-size: 1.2rem;
+	}
+
+	.intro {
+		font-size: 1.2rem;
+		line-height: 1.6;
+		margin-bottom: 2rem;
+	}
+
+	.section {
+		background: white;
+		padding: 2rem;
+		border-radius: 8px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		margin-bottom: 2rem;
+	}
+
+	.roadmap ul {
+		list-style: none;
+		padding: 0;
+		margin-bottom: 2rem;
+	}
+
+	.roadmap li {
+		margin-bottom: 1rem;
+		padding-left: 1.5rem;
+		position: relative;
+	}
+
+	.roadmap li:before {
+		content: "•";
+		color: var(--accent);
+		position: absolute;
+		left: 0;
+		font-weight: bold;
+	}
+
+	footer {
+		text-align: center;
+		margin-top: 4rem;
+		padding: 2rem;
+		border-top: 1px solid #eee;
+		color: #666;
+	}
+
+	footer a {
+		color: var(--accent);
+		text-decoration: none;
+	}
+
+	footer a:hover {
+		text-decoration: underline;
+	}
+
+	@media (max-width: 768px) {
+		.nav-container {
+			flex-direction: column;
+			padding: 1rem;
+		}
+
+		.nav-links {
+			justify-content: center;
+			margin-bottom: 1rem;
+		}
+
+		.wallet-container {
+			width: 100%;
+		}
+
+		.wallet-btn {
+			display: block;
+			text-align: center;
+		}
+	}
+</style>
